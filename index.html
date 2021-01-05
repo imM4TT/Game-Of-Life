@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/exec.js"></script>
+	<script src="js/ext.js"></script>
+  <meta charset="UTF-8">
+
+  <title>Your Game Of Life</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <h1>Game Of Life</h1>
+      <div id="but-div">
+      </div>
+      <p></p>
+    </nav>
+    <h2></h2>
+  </header>
+	<div id="bloc-content">
+		<div id="left-content" class="content">
+		<div id ="left-container">
+		
+			<div id="rules">
+				<p>
+					This is your game of life. <br />
+					<br />
+
+					Every black square represent a living cell, white represents a dead cell<br />
+				</p>
+				<p>
+					You can click on cell to born/kill it, therefore it's the awakening of the life algorithm.<br />
+					<br />
+				</p>
+					Only 2 Rules :<br />
+					<br />
+					*If a dead cell has 3 neighbors, it's born.<br />
+					*If a living cell has 2 or 3 neighbors it stays alive, otherwise it dies.<br />
+
+			</div>
+			
+			<div id="action">
+				<div class="section-action">
+					<p>Current turn:                                        	</p>
+					<p id="count-turn">0</p>
+				</div>
+				<div class="section-action">
+					<p id="count-total">Nb. of alive cells (out of x): </p>
+					<p id="count-alive">0</p>
+				</div>
+				<input class="but-action" id="start-button" type="button" value="Start">
+				<input class="but-action" id="reset-button" type="button" value="Reset">
+				<input class="but-action" id="pause-button" type="button" value="Pause" onclick=pause()>
+			</div>
+			
+			<div id="settings">
+				<p>Size</p>
+				<input id ="size-slider" type="range" min="1" max="4" value="2" step="1" onchange="setSize(this.value)">
+
+				<p>Speed</p>
+				<input id ="speed-slider" type="range" min="1" max="20" value="1" step=".2" onchange="setSpeed(this.value)">
+<!-- 				<p>Brushes</p>
+	
+				<div>
+					<div><p>Simple:</p><img class="icon-brush" src="img/test.png"></div>
+					<div><p>Erase:</p><img class="icon-brush" src="img/test.png"></div>
+					<div><p>Medium:</p><img class="icon-brush" src="img/test.png"></div>
+					<div><p>Large:</p><img class="icon-brush" src="img/test.png"></div>
+					<div><p>Custom:</p><img class="icon-brush" src="img/custom.png"></div>
+					<div><p>Custom 2:</p><img class="icon-brush" src="img/custom2.png"></div>
+					<div><p>Custom 3:</p><img class="icon-brush" src="img/custom3.png"></div>
+					<div><p>Circle:</p><img class="icon-brush" src="img/test.png"></div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	
+		<div id="container" class="content"></div>
+	</div>
+</body>
+
+
+</html>
